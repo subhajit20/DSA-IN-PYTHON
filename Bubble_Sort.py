@@ -1,4 +1,4 @@
-arr = [30, 88, 13, 51, 26, 67, 20, 99, 29, 68]
+arr = [68, 88, 13, 51, 26, 67, 20, 99, 29, 30]
 
 def Bubble_Sort(arr):
     for i in range(0,len(arr)):
