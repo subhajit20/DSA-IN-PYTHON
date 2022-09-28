@@ -35,11 +35,12 @@ class Tree:
 
 newTree = Tree()
 newTree.root = Node(10)
-newTree.root.left = Node(76)
-newTree.root.right = Node(66)
-newTree.root.left.right = Node(102)
-newTree.root.left.left = Node(132)
+newTree.root.left = Node(7)
+newTree.root.right = Node(12)
+newTree.root.right.right = Node(13)
+newTree.root.left.right = Node(8)
+newTree.root.left.left = Node(3)
 
-# newTree.preOrder_Traverse(newTree.root) # Root -> Left -> Right
-newTree.postOrder_Traverse(newTree.root) # Left -> Right -> Root
+newTree.preOrder_Traverse(newTree.root) # Root -> Left -> Right
+# newTree.postOrder_Traverse(newTree.root) # Left -> Right -> Root
 # newTree.InOrder_Traverse(newTree.root) # Left -> Root -> Right

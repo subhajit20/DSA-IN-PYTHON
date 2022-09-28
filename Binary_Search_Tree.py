@@ -28,7 +28,7 @@ class Binary_Search_Tree:
             else:
                 prev.left = Node(data)
         
-    def inorderTraversal(self,root):
+    def inorderTraversal(self):
         if self.root == None:
             return
         else:
@@ -42,16 +42,31 @@ class Binary_Search_Tree:
                     temp = stack.pop()
                     print(temp.data)
                     temp = temp.right
+    
+    def preorderTraversal(self):
+        if self.root == None:
+            return
+        else:
+            stack = []
+            stack.append(self.root)
+            
+            while len(stack) > 0:
+                node = stack.pop()
+                print(node.data)
                 
+                if node.right is not None:
+                    stack.append(node.right)
+                elif node.left is not None:
+                    stack.append(node.left)
+                    
+                    
 bst = Binary_Search_Tree()
 
 bst.insert(10)
-bst.insert(50)
-bst.insert(70)
-bst.insert(20)
-bst.insert(30)
-bst.insert(2)
-bst.insert(6)
-bst.insert(1)
+bst.insert(7)
+bst.insert(3)
+bst.insert(12)
+bst.insert(13)
+bst.insert(8)
 
-bst.inorderTraversal(bst.root)
+bst.preorderTraversal()
