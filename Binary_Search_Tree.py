@@ -1,7 +1,3 @@
-from re import search
-from types import NoneType
-
-
 class Node:
     def __init__(self,data):
         self.data = data
@@ -95,6 +91,11 @@ class Binary_Search_Tree:
             return
         else:
             print("ROOT :: ",self.root.data)
+    
+    
+    # This delete function will only work for 2 use cases
+    # Case 1 -> Delete Leaf Node of any Binary search tree
+    # Case 2 -> Delete non Leaf Node of any Binary search tree
     
     def Delete_Node(self,data):
         flag = False
