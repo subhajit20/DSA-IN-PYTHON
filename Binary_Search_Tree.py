@@ -1,3 +1,7 @@
+from re import search
+from types import NoneType
+
+
 class Node:
     def __init__(self,data):
         self.data = data
@@ -60,6 +64,80 @@ class Binary_Search_Tree:
                     stack.append(node.left)
                     
                     
+    def Search(self,data):
+        flag = False
+        if self.root is None:
+            print("Tree is empty...")
+            return
+        else:
+            prev = None
+            last = self.root
+            
+            while last is not None:
+                if data == last.data:
+                    prev = last
+                    flag = True
+                    break
+                elif data > last.data:
+                    last = last.right
+                elif data < last.data:
+                    last = last.left
+                    
+            if flag:
+                print("Element is found ---> ",prev.data)
+                return prev.data
+            else:
+                print("Element is  not found")
+                return None
+    def GetRootElement(self):
+        if self.root is None:
+            print("Tree is empty...")
+            return
+        else:
+            print("ROOT :: ",self.root.data)
+    
+    def Delete_Node(self,data):
+        flag = False
+        if self.root is None:
+            print("Tree is none...")
+            return
+        else:
+            prev = None
+            last = self.root
+            
+            while last is not None:
+                if data == last.data:
+                    prev = last
+                    flag = True
+                    break
+                elif data > last.data:
+                    last = last.right
+                elif data < last.data:
+                    last = last.left
+            
+            if flag == True:
+                if prev.left is not None:
+                    prev.data = prev.left.data
+                    prev.left = None
+                    print("Element has been deleted...")
+                    return
+                elif prev.right is not None:
+                    prev.data = prev.right.data
+                    prev.right = None
+                    print("Element has been deleted...")
+                    return
+                elif prev.left is None and prev.right is None:
+                    prev.data = None
+                    return
+                else:
+                    print("Element Not found...")
+                    return
+            else:
+                print("Element is not found...")
+                
+        
+        
+        
 bst = Binary_Search_Tree()
 
 bst.insert(10)
@@ -69,4 +147,5 @@ bst.insert(12)
 bst.insert(13)
 bst.insert(8)
 
-bst.preorderTraversal()
+bst.Delete_Node(13)
+bst.inorderTraversal()
