@@ -2,7 +2,7 @@
 
 def Counting_Sort(arr):
     empty_arr = []
-    
+
     max = arr[0]
     for i in range(0,len(arr)):
         if max < arr[i]:
@@ -30,5 +30,5 @@ def Counting_Sort(arr):
     return arr
 
 arr = [6,2,8,4]
-newarr = Counting_Sort(arr)
-print(arr)
+newarr = Counting_Sort(arr) 
+print(arr) # sorted array => [2,4,6,8]
